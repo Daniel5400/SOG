@@ -1,38 +1,51 @@
-import React from 'react'
-import hero from '../Assets/customer-hero-img.4cb86085746fb67aa0f7.png'
-import google from '../Assets/google.png'
-import store from '../Assets/store.png'
-import spar from '../Assets/spar.png'
-import arise from '../Assets/arise.png'
-import download from '../Assets/download.png'
-import signup from '../Assets/signup.png'
-import enjoy from '../Assets/enjoy.png'
-import phone from '../Assets/phone.png'
-import phone2 from '../Assets/phone2.png'
+import React, { useState, useEffect } from 'react';
+import '../App.css'; // Ensure you import the CSS file
+
+const images = [
+  require('../Assets/backgroundcar.jpg'),
+  require('../Assets/backgroundcars.jpg'),
+];
 
 
 const Hero = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 30000); // Change image every 3 seconds
+
+    return () => clearInterval(interval); // Clean up the interval on component unmount
+  }, []);
+
+  const currentImage = images[currentImageIndex];
+
   return (
     <div>
-        <div className='hero'>
-            <section className='hero-content'>
-                <div className='h-l'>
-                    <h1>Your <span>One Stop Way</span> to <span>Good & Unbeatable </span>Properties</h1>
-
-                   
-                </div>
-
-                {/* <img src={hero} alt="" className='hero-img'/> */}
-            </section>
-            
-        </div>
-    
-        
-        
-
-
+      <div
+        className="hero"
+        style={{
+          backgroundImage: `url(${currentImage})`,
+          width: '100%',
+          height: '75vh',
+          backgroundSize: 'cover',
+          marginBottom: '50px',
+          transition: 'background-image 1s ease-in-out'
+        }}
+      >
+        <section className="hero-content">
+          <div className="h-l">
+            <h1>
+              Let <span> make</span>your<span>ride experience a memorable one.</span> 
+            </h1>
+            <p>When it comes to solid car we are you best choice, ride in confort,ride with us.</p>
+           
+          </div>
+        </section>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Hero
+
+export default Hero;

@@ -1,13 +1,13 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Header2 from '../Components/Header2';
-import SideBar from '../Components/SideBar';
+// import SideBar from '../Components/SideBar';
 
 const Settings = () => {
   return (
     <div className='dashb'>
     
     <section className='dashboard'>
-            <SideBar/>
+            {/* <SideBar/> */}
             <main>
                 <Header2/>
                 

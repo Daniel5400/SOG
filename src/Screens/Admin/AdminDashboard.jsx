@@ -1,12 +1,11 @@
 import React from 'react';
 import Header2 from '../../Components/Header2';
-import { FaCubes } from "react-icons/fa6";
-import { FaUsersSlash } from "react-icons/fa6";
 import { FaUsers } from "react-icons/fa";
-import { GrShop } from "react-icons/gr";
 import Sidebar2 from '../../Components/Sidebar2';
-import { RiBankFill } from "react-icons/ri";
+import { FaCarSide } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { FaAddressBook } from "react-icons/fa6";
+import Footer from '../../Components/Footer';
 
 
 const AdminDashboard = () => {
@@ -14,44 +13,29 @@ const AdminDashboard = () => {
     const Cards= [
 
         {
-            text:'Products',
-            icon: FaCubes,
-            link:'/adminproducts'
+            text:'Cars',
+            icon: FaCarSide,
+            link:'/admincars'
             // background:'#6861ce'
         },
         {
-            text:'Shops',
-            icon: GrShop,
-            link:'/adminshops'
+            text:'Bookings',
+            icon: FaAddressBook,
+            link:'/bookings'
             // background:'#f25961'
-        },
-          
-    
+        },    
         {
-          text:'Unapproved Vendors',
-          icon:FaUsersSlash,
-          link:'/unapprove'
+          text:'Users',
+          icon:FaUsers,
+          link:'/users'
           // background:'#31ce36'
         },
-          
         {
-          text:'Approved Vendors',
+          text:'Payments',
           icon:FaUsers,
-          link:'/approve'
-          // background:'#6861ce'
-    
-        },
-
-        
-    
-        {
-          text:'Bank',
-          icon: RiBankFill,
-          link:'/adminbank'
-          // background:'#f25961'
-    
+          link:'/payments'
+          // background:'#31ce36'
         }
-        
     ];
 
     
@@ -68,10 +52,10 @@ const AdminDashboard = () => {
 
       <section className='left'>
      
-          {/* <div className='search'>
-            <img src={s} alt="" />
+           <div className='search'>
+            {/* <img src={} alt="" /> */}
             <input type="search" placeholder='Search' />
-          </div> */}
+          </div> 
 
           <div className='cards-container'>
           
@@ -105,6 +89,7 @@ const AdminDashboard = () => {
       </main>
     
     </section>
+    <Footer/>
 </div>
   )
 }

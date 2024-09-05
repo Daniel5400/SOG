@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Header2 from '../Components/Header2';
-import SideBar from '../Components/SideBar';
+// import SideBar from '../Components/SideBar';
 import Modal from "react-modal";
 import m1 from '../Assets/Future-houses-featured-image.avif'
 import m2 from '../Assets/Future-houses-featured-image.avif'
@@ -25,7 +25,7 @@ const Products = () => {
     <div className='dashb'>
 
         <section className='dashboard'>
-            <SideBar/>
+            {/* <SideBar/> */}
             <main>
                 <Header2/>
                 <div className='add'>

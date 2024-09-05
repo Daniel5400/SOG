@@ -2,7 +2,7 @@ import React from 'react'
 import MainHeader from '../Components/MainHeader'
 import Hero from '../Components/Hero'
 import Footer from '../Components/Footer'
-import House from '../Components/House'
+import CarList from '../Components/CarList'
 import ContactUs from './ContactUs'
 
 const Landing = () => {
@@ -10,10 +10,10 @@ const Landing = () => {
     <div style={{backgroundColor:'#fff'}}>
       <MainHeader/>
       <Hero/>
-      <House/>
+      <CarList/>
       <ContactUs/>
       
-      {/* <Footer/> */}
+      <Footer/>
       
     </div>
   )
